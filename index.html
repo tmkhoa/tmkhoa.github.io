@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="stylesheet" type="text/css" href="styles/main.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+	<script type="text/javascript" src="scripts/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(e) {
+			var selectedDiv = window.location.href.split("#");
+			if(selectedDiv.length > 1) {
+				selectedDiv = selectedDiv[1];
+				switchto("#"+selectedDiv);
+			}
+			else
+				selectedDiv = "";
+			
+			function switchto(selectedDiv) {
+				if(selectedDiv != "") {
+					$("#main-content .section:visible").slideUp(200);
+					$(selectedDiv).slideDown(200, function() {
+						$(document).prop("title", selectedDiv.charAt(1).toUpperCase() + selectedDiv.substring(2) + " | Khoa Tran");
+					});				
+				}
+			}
+			
+			$("#navigation ul li a").click(function(e) {
+				var selected = $(this).attr("href");
+				if (!$(selected).is(":visible")) {
+					switchto(selected);
+				}				
+			});
+		})
+	</script>
+	<title>Home | Khoa Tran</title>
+</head>
+
+<body>
+	<div id="wrapper">
+		<header>
+			<div id="photo">
+				<img src="images/photo.png" alt="My photo"/>
+			</div>
+			<div id="text">
+				<p class="name">Khoa Tran <span class="smaller">(Khoa Trần)</span></p>
+				<p class="description">MSc. in Computing Science student @ Simon Fraser University</p>
+			</div>
+		</header>
+		<div id="navigation">
+			<ul>
+				<li><a href="#summary">Summary</a></li>
+				<li><a href="#education">Education</a></li>
+				<li><a href="#experience">Experience</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</div>
+		<div id="main-content">
+			<div id="summary" class="section default">
+				<p>I received my Bachelor of Science in Information Technology in 2013 at University of Science, Vietnam National University at Ho Chi Minh City.</p>
+				<p>Currently, I am a Master student at School of Computing Science, Simon Fraser University (SFU). My research interests are Machine Learning, Natural Language Processing, Human - Computer Interaction and any intersection of those fields.</p>
+				<p>I am also working as a Research Assistant at <a href="http://natlang.cs.sfu.ca/">Natural Language Laboratory</a> (Natlang) - SFU under the supervision of Dr. <a href="http://www.sfu.ca/~popowich">Fred Popowich</a>.</p>
+			</div>
+			<div id="education" class="section">
+				<ul>									
+					<li>
+						<h4>MSc. in Computer Science</h4>
+						<p>September 2014 - Present <br />
+							 <a href="https://www.sfu.ca/computing.html">School of Computing Science</a>, <a href="http://www.sfu.ca">Simon Fraser University</a>
+						</p>									
+					</li>
+					<li>
+						<h4>BSc. (Honours with Distinction) in Information Technology</h4>
+						<p>September 2009 - July 2013 <br />
+							<a href="https://en.wikipedia.org/wiki/Ho_Chi_Minh_City_University_of_Science">University of Science</a>, <a href="https://en.wikipedia.org/wiki/Vietnam_National_University,_Ho_Chi_Minh_City">Vietnam National University at Ho Chi Minh City</a> 
+						</p>										
+					</li>
+					
+				</ul>
+			</div>
+			<div id="experience" class="section">
+				<ul>											
+					<li>
+						<h4>Research Assistant</h4>
+						<p>September 2014 - Present <br />
+							<a href="https://www.sfu.ca/computing.html">School of Computing Science</a>, <a href="http://www.sfu.ca">Simon Fraser University</a> <br />
+						</p>									
+					</li>										
+					<li>
+						<h4>Teaching Assistant</h4>
+						<p>January 2015 - April 2015 (Spring 2015)<br />
+							<a href="https://www.sfu.ca/computing.html">School of Computing Science</a>, <a href="http://www.sfu.ca">Simon Fraser University</a> <br />
+							Courses: CMPT 125 & CMPT 127 - Introduction to Computing Science and Programming II
+						</p>										
+					</li>
+					<li>
+						<h4>Teaching Assistant</h4>
+						<p>September 2013 - January 2014<br />
+							Faculty of Information Technology, <a href="https://en.wikipedia.org/wiki/Ho_Chi_Minh_City_University_of_Science">University of Science</a>, <a href="https://en.wikipedia.org/wiki/Vietnam_National_University,_Ho_Chi_Minh_City">Vietnam National University at Ho Chi Minh City</a> <br />
+							Courses: CTT005 - Graph Theory
+						</p>										
+					</li>
+					<li>
+						<h4>Intern - .NET application developer</h4>
+						<p>July 2012 - August 2012 <br />
+							 <a href="http://fpt-software.com/">FPT Software Company</a>, Ho Chi Minh City
+						</p>									
+					</li>
+				</ul>
+			</div>
+			<div id="contact" class="section">
+				<ul class="feature-icons">
+					<li class="fa-mobile-phone">+1 (778) 98O-9OO7</li>
+					<li class="fa-envelope">khoa_tran at sfu dot ca</li>
+					<li class="fa-linkedin"><a href="https://www.linkedin.com/in/khoamtran">khoamtran</a></li>
+					<li class="fa-github"><a href="https://github.com/tmkhoa">tmkhoa</a></li>
+					<li><a href="https://www.researchgate.net/profile/Khoa_Tran30">ResearchGate</a></li>
+				</ul>
+			</div>
+		</div>
+		<footer>
+			<div class="sep"></div>
+			<p class="copyrighttext">Copyright &copy; 2015 Khoa Tran</p>
+			<p class="copyrighttext">Icons by <a href="http://fontawesome.io">Font Awesome</a> by Dave Gandy</p>
+		</footer>
+	</div>
+</body>
+
+</html>
